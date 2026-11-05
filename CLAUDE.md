@@ -2,7 +2,7 @@
 
 Streamlit app that fetches RSS headlines, lets the user rate them positive/negative, and trains a personal sentiment model (TF-IDF + VADER feature + logistic regression) on those ratings.
 
-Run: `venv/bin/streamlit run app.py` · Test: `venv/bin/python -m pytest -q`
+Run: `venv/bin/python desktop.py` (native window) or `venv/bin/streamlit run app.py` · Rebuild Mac app: `scripts/build_mac_app.sh` · Test: `venv/bin/python -m pytest -q`
 
 ## Git workflow: keep GitHub constantly updated
 

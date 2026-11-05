@@ -10,13 +10,24 @@ Grabs the latest headlines and rates each one as **positive** or **negative**. Y
 4. **Active learning:** the *Rate* tab shows the articles the model is least sure about first, because those teach it the most.
 5. **Transparency:** the *What it has learned* tab shows which words push it towards positive or negative, and how often it agrees with you on ratings it wasn't trained on.
 
-## Run it
+## Desktop app (macOS)
+
+Build it once:
+
+```bash
+scripts/build_mac_app.sh
+```
+
+This creates **News Mood.app** in `~/Applications`, with a shortcut on your Desktop. Double-click it to open the app in its own window, with no browser. You can drag it to the Dock to keep it there. The app runs the code in this folder, so changes you make show up the next time you open it. Logs go to `~/Library/Logs/NewsMood.log`.
+
+## Run it from the terminal
 
 ```bash
 python3 -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
-streamlit run app.py
+python desktop.py        # native window
+streamlit run app.py     # or in the browser
 ```
 
 Run the tests with `pytest`.
@@ -26,6 +37,9 @@ Run the tests with `pytest`.
 | File | Purpose |
 |---|---|
 | `app.py` | Streamlit UI |
+| `desktop.py` | Opens the UI in a native window |
+| `scripts/build_mac_app.sh` | Builds News Mood.app |
+| `scripts/make_icon.py` | Draws the app icon |
 | `news.py` | RSS feed list and fetching |
 | `db.py` | SQLite storage for articles and ratings (`data/news.db`) |
 | `model.py` | The personal sentiment model |
