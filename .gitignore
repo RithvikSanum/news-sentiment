@@ -1,0 +1,8 @@
+venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.DS_Store
+.env
+# Your ratings live here; remove this line if you want them backed up on GitHub
+data/
